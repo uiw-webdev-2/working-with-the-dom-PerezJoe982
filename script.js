@@ -4,18 +4,27 @@
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll
  */
 
-import Backpack from "./Backpack.js";
+import Closet from "./Closet";
 
-const everydayPack = new Backpack(
+// Wall_Dimentions, Items, boxes, Wall_color, Door,
+const My_Closet = new Closet(
+  "4ft Length, 8ft Height, 2ft Deep",
+  "Clothing, boxes, safe, shelf",
+  "Clothing and shoes",
+  "light blue",
+  true
 );
 
 const content = `
-     <figure class="backpack__image">
-       <img src= alt="" />
+     <figure class="Closet__image">
+       <img src= ${My_Closet.image}alt="" />
      </figure>
-     <h1 class="backpack__name"></h1>
-     <ul class="backpack__features">
-     </ul>
+     <li class="Closet__Dimentions">${My_Closet.Wall_Dimentions}</h1>
+      <li> Items: ${My_Closet.Items} </li> 
+      <li> boxes:  ${My_Closet.boxes} </li>
+      <li> Wall_color: ${My_Closet.Wall_color} </li> 
+      <li> Door: ${My_Closet.Door} </li>
+     </ul> 
    </article>
  `;
 
@@ -23,7 +32,7 @@ const main = document.querySelector(".maincontent");
 
 
 const newArticle = document.createElement('article');
-newArticle.classList.add('backpack');
+newArticle.classList.add('Closet');
 newArticle.setAttribute('id','everyday');
 newArticle.innerHTML = content;
 
